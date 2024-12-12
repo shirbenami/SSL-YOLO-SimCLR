@@ -21,13 +21,11 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
 * Provides visualizations such as loss graphs, confusion matrices, and accuracy metrics.
 
 
-## Dataset - STL10
+## Dataset - cars and backrounds
 
 * The dataset includes cropped images (with cars and random backround) to train and evaluate the models:
-Unlabeled Dataset: For self-supervised learning.
-Labeled Dataset: For supervised training and fine-tuning.
-The dataset is divided as follows:
-70% for Training, 15% for Validation, and 15% for Testing.
+Unlabeled Dataset: For self-supervised learning: 32930 images for train, 7056 val, 7057 test
+Labeled Dataset: For supervised training and fine-tuning:1216 images for train, 352 val ,175 test
   
 ## Project Structure
 
