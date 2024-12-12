@@ -130,4 +130,4 @@ python3 supervised_train.py
 
 ## Resources
 - [SimCLR Tutorial](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial17/SimCLR.html)
-- [STL10 Dataset](https://www.kaggle.com/datasets/jessicali9530/stl10?resource=download)
+- [Yolov8 Architecture]([https://www.kaggle.com/datasets/jessicali9530/stl10?resource=download)](https://github.com/ultralytics/ultralytics/issues/189)
