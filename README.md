@@ -7,7 +7,11 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
 
 #### 1. Self-Supervised Pretraining (SimCLR):
 * Trains YOLOv8’s backbone using contrastive learning (SimCLR) on unlabeled image crops.
+* The model structure:
+![model structure](https://github.com/user-attachments/assets/1891baea-cb40-4ce9-a280-1951adb63d02)
+
 * Optimizes feature representations using the InfoNCE loss function.
+  
 
 #### 2. Fine-Tuning:
 * Fine-tunes the pretrained YOLOv8 backbone on labeled datasets.
