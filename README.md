@@ -2,6 +2,7 @@
 This repository contains a project focused on leveraging YOLOv8 for self-supervised learning (SSL) using SimCLR principles and fine-tuning it on a labeled dataset. The project includes SSL training, fine-tuning, supervised training, and detailed evaluation tools to compare the benefits of SSL-pretrained backbones.
 
 ## Project Overview
+![image4](https://github.com/user-attachments/assets/61beb9a4-b33f-4632-9426-68d9629826fc)
 
 This project explores the integration of YOLOv8 with SimCLR for self-supervised representation learning, followed by fine-tuning on a labeled dataset. The main workflow includes:
 
@@ -138,3 +139,4 @@ python3 supervised_train.py
 ## Resources
 - [SimCLR Tutorial](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial17/SimCLR.html)
 - [Yolov8 Architecture]([https://www.kaggle.com/datasets/jessicali9530/stl10?resource=download)](https://github.com/ultralytics/ultralytics/issues/189)
+- [SimCLR information](https://research.google/blog/advancing-self-supervised-and-semi-supervised-learning-with-simclr)
