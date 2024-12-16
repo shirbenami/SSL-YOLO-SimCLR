@@ -23,9 +23,12 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
 
 ## Dataset - cars and backrounds
 
-* The dataset includes cropped images (with cars and random backround) to train and evaluate the models:
-Unlabeled Dataset: For self-supervised learning: 32930 images for train, 7056 val, 7057 test
-Labeled Dataset: For supervised training and fine-tuning:1216 images for train, 352 val ,175 test
+* The supervised dataset consists of labeled images of cars,each image contains multiple annotated objects split into three subsets:
+  * Train set: **1,216** images with **22,806** labels
+  * Validation set: **352** images with  **6,796** labels
+  * Test set: **175** images with **3,208** labels 
+* The self-supervised learning stage uses a larger dataset containing **47,043** unlabeled images, consisting of a mix of cars and background objects. This dataset enables the model to learn generalizable features without relying on labels.
+
   
 ## Project Structure
 
