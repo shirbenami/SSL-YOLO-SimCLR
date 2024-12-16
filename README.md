@@ -32,7 +32,8 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
   * Train set: **1,216** images with **22,806** labels
   * Validation set: **352** images with  **6,796** labels
   * Test set: **175** images with **3,208** labels 
-* The self-supervised learning stage uses a larger dataset containing **47,043** unlabeled images, consisting of a mix of cars and background objects. This dataset enables the model to learn generalizable features without relying on labels.
+* The self-supervised learning stage uses a larger dataset containing **47,043** unlabeled images, consisting of a mix of cars and background objects. This dataset enables the model to learn generalizable features without relying on labels:
+  * Dataset split: 32930 train (70%), 7056 val(15%), 7057 test(15%) 
 
   
 ## Project Structure
