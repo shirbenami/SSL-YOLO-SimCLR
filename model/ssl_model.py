@@ -40,11 +40,17 @@ def build_classifier(lr):
     """
 
     # Load YOLO model and extract the backbone
-    yolo = YOLO("yolov8n.yaml")  # Use YOLOv8 nano model
-    trained_layers = 9  # Number of layers to extract from YOLO backbone
-    model_children_list = list(yolo.model.children())  # Extract all children layers
-    backbone = model_children_list[0][:trained_layers]  # Get the first n layers
+    model = YOLO("yolov8n.yaml")  # Use YOLOv8 nano model
 
+    # Print the structure of the model
+    print(model.model)
+
+    trained_layers = 10  # Number of layers to extract from YOLO backbone
+    model_children_list = list(model.model.children())  # Extract all children layers
+    for i, child in enumerate(model_children_list):
+        print(f"Layer {i}: {child}")
+    backbone = model_children_list[0][:trained_layers]  # Get the first n layers
+    print("Backbone keys:", backbone.state_dict().keys())
 
     # Define the SimYOLOv8 class
     class SimYOLOv8(nn.Module):
@@ -76,7 +82,7 @@ def build_classifier(lr):
 
     # Define the data transforms
     data_transforms = transforms.Compose([
-    transforms.RandomResizedCrop(96),
+    transforms.RandomResizedCrop(640),
     transforms.RandomHorizontalFlip(),
     transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.1, hue=0.1),
     transforms.ToTensor(),
@@ -85,8 +91,7 @@ def build_classifier(lr):
 
     # Replace train_dataset with SimCLRDataset
 
-    full_dataset = SimCLRDataset('datasets/cropped/mix_crops',
-                                  data_transforms)
+    full_dataset = SimCLRDataset('datasets/cropped/mix_crops', data_transforms)
     dataset_size = len(full_dataset)
     train_size = int(0.7 * dataset_size)
     val_size = int(0.15 * dataset_size)
@@ -103,6 +108,9 @@ def build_classifier(lr):
     val_loader = DataLoader(val_dataset, batch_size=128, shuffle=False, num_workers=4)
     test_loader = DataLoader(test_dataset, batch_size=128, shuffle=False, num_workers=4)
     return train_loader, val_loader,test_loader, model, criterion, optimizer
+
+
+
 
 
 
