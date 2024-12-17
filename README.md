@@ -13,7 +13,7 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
 
 #### 1. Self-Supervised Pretraining (SimCLR):
 * Trains YOLOv8’s backbone using contrastive learning (SimCLR) on unlabeled image crops.
-* * **Data Augmentations:**  
+* **Data Augmentations:**  
   During SSL training, we apply several augmentations to the input images to generate similar yet distinct views for contrastive learning. These augmentations include:  
 
   ```python
@@ -30,6 +30,7 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
   ])
   ```
    * Example Augmented Images:
+     
     ![image](https://github.com/user-attachments/assets/2b6c677d-1ee1-483e-aca8-4574af3f40e0)
 
 * Optimizes feature representations using the InfoNCE loss function.
