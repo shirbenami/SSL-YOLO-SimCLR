@@ -119,24 +119,21 @@ python3 supervised_train.py
 ## 1. Loss and Accuracy Over Epochs
 
 ### Supervised Baseline:
-![train_val_graphs_supervised_model_60epochs](https://github.com/user-attachments/assets/23b23c3b-d5ac-4422-93cd-3e1ee5c1dd56)
 
-* Test Accuracy: 73.55%
+* Test Accuracy: 
 
 ### Fine-Tuned (SSL):
-![fine_tuning_classification_graphs_60epochs](https://github.com/user-attachments/assets/f83fb656-e983-41b0-90e0-803fdc654cb0)
 
-* Test Accuracy: 82.49%
+* Test Accuracy: 
 
 ## 2. Confusion Matrix
 
 ### Supervised Baseline:
 
-![confusion_matrix_60epochs](https://github.com/user-attachments/assets/3a3dd871-be6d-44af-b031-4164b96c6549)
 
 ### Fine-Tuned (SSL):
 
-![confusion_matrix_fine_tuning_60epochs](https://github.com/user-attachments/assets/8c530b73-d825-4af8-9b28-dc97de92fd2e)
+
 
 
 ## Resources
