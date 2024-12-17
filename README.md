@@ -68,7 +68,7 @@ project_root/
 │   ├── fine_tuning/            # Stores logs, graphs, and models from fine-tuning.
 │   └── supervised_train/       # Stores logs, graphs, and models from supervised training.
 │
-├── ssl_train.py                # Main script for training YOLOv8 with SSL (SimCLR).
+├── simclr_train.py                # Main script for training YOLOv8 with SSL (SimCLR).
 ├── fine_tune.py                # Main script for fine-tuning using SSL-pretrained weights.
 ├── supervised_train.py         # Main script for supervised YOLOv8 training.
 ├── README.md                   # Project description, instructions, and results.
@@ -88,10 +88,10 @@ YOLOv8 installed via pip install ultralytics
 ## Usage 
 ### 1. Self-Supervised Pretraining (SimCLR)
 
-Run SSL training on cropped images using SimCLR principles:
+Run SSL- SimCLR training on cropped images using SimCLR principles:
 
 ```python
-python3 ssl_train.py
+python3 simclr_train.py
 
 ```
 
