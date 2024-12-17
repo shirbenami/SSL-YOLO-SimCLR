@@ -6,12 +6,31 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
 
 ![image4](https://github.com/user-attachments/assets/61beb9a4-b33f-4632-9426-68d9629826fc)
 
+* The model structure:
+![model structure](https://github.com/user-attachments/assets/1891baea-cb40-4ce9-a280-1951adb63d02)
+
 . The main workflow includes:
 
 #### 1. Self-Supervised Pretraining (SimCLR):
 * Trains YOLOv8’s backbone using contrastive learning (SimCLR) on unlabeled image crops.
-* The model structure:
-![model structure](https://github.com/user-attachments/assets/1891baea-cb40-4ce9-a280-1951adb63d02)
+* * **Data Augmentations:**  
+  During SSL training, we apply several augmentations to the input images to generate similar yet distinct views for contrastive learning. These augmentations include:  
+
+  ```python
+  # Define the data transforms
+  data_transforms = transforms.Compose([
+      transforms.RandomResizedCrop(640),               # Crop and resize
+      transforms.RandomHorizontalFlip(),              # Random horizontal flip
+      transforms.ColorJitter(                         # Random color changes
+          brightness=0.2, contrast=0.2, saturation=0.1, hue=0.1
+      ),
+      transforms.ToTensor(),                          # Convert image to Tensor
+      transforms.Normalize([0.485, 0.456, 0.406],     # Normalize image
+                           [0.229, 0.224, 0.225])
+  ])
+  ```
+   * Example Augmented Images:
+    ![image](https://github.com/user-attachments/assets/2b6c677d-1ee1-483e-aca8-4574af3f40e0)
 
 * Optimizes feature representations using the InfoNCE loss function.
   
@@ -30,12 +49,12 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
 
 ## Dataset - cars and backrounds
 
-* The supervised dataset consists of labeled images of cars,each image contains multiple annotated objects split into three subsets:
-  * Train set: **1,216** images with **22,806** labels
-  * Validation set: **352** images with  **6,796** labels
-  * Test set: **175** images with **3,208** labels 
+* The supervised dataset consists of labeled images of cars, each containing multiple annotated objects, split into three subsets:
+  * **Train set**: 1,216 images with 22,806 labels
+  * **Validation set**: 352 images with  6,796 labels
+  * **Test set**: 175 images with 3,208 labels 
 * The self-supervised learning stage uses a larger dataset containing **47,043** unlabeled images, consisting of a mix of cars and background objects. This dataset enables the model to learn generalizable features without relying on labels:
-  * Dataset split: 32930 train (70%), 7056 val(15%), 7057 test(15%) 
+  * **Dataset split**: 32930 train (70%), 7056 val(15%), 7057 test(15%) 
 
   
 ## Project Structure
@@ -138,5 +157,5 @@ python3 supervised_train.py
 
 ## Resources
 - [SimCLR Tutorial](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial17/SimCLR.html)
-- [Yolov8 Architecture]([https://www.kaggle.com/datasets/jessicali9530/stl10?resource=download)](https://github.com/ultralytics/ultralytics/issues/189)
+- [Yolov8 Architecture](https://github.com/ultralytics/ultralytics/issues/189)
 - [SimCLR information](https://research.google/blog/advancing-self-supervised-and-semi-supervised-learning-with-simclr)
