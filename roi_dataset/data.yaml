@@ -1,0 +1,10 @@
+# Path to train and validation datasets
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+# Number of classes
+nc: 1
+
+# Class names
+names: ['car']
