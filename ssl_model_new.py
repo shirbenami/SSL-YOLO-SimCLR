@@ -39,7 +39,7 @@ def build_classifier(lr):
     """
 
     # --- Step 1: Load YOLO model and add pooling ---
-    yolo = YOLO("yolov8n.yaml")  # Load YOLOv8 nano model
+    yolo = YOLO("yolov8n.pt")  # Load YOLOv8 nano model
     # --- Extract Backbone (first 12 layers) ---
     yolo.model.model = yolo.model.model[:11]  # Keep only the first 11 layers 
     
