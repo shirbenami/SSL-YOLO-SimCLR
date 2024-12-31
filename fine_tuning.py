@@ -8,7 +8,7 @@ from check import missing, unexpected
 combined_weights = torch.load('./output/ssl_train/combined_model.pth')  # Path to SSL-trained backbone weights
 
 #Load the model
-model = YOLO("yolov8n.yaml") # Create a YOLOv8 model instance
+model = YOLO("yolov8n.pt") # Create a YOLOv8 model instance
 
 print("Before loading weights:", list(model.parameters())[0].mean().item())
 
