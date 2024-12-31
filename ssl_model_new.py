@@ -84,7 +84,6 @@ def build_classifier(lr):
             return projections
     
     # --- Step 3: Initialize Model with YOLO Backbone ---
-    model = SimYOLOv8(yolo.model, input_dim)
     
     # Enable gradient updates for the YOLO backbone
     backbone = yolo.model.requires_grad_()
@@ -93,6 +92,9 @@ def build_classifier(lr):
     # Print to verify if gradients are enabled for the backbone
     for param in model.backbone.parameters():
         print(f"Layer {param.shape}: requires_grad = {param.requires_grad}")
+        
+    model = SimYOLOv8(backbone, input_dim)
+
     
     # Define the loss function and optimizer
     criterion = InfoNCE(temperature=0.1)
