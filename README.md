@@ -8,6 +8,7 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
 
 * The model structure:
 ![model structure](https://github.com/user-attachments/assets/1891baea-cb40-4ce9-a280-1951adb63d02)
+For YOLOv8, the backbone is the first 10 layers. You can check the [yaml model definition](https://github.com/ultralytics/ultralytics/blob/1d13575ba16623d711c682118ee118615383ba99/ultralytics/cfg/models/v8/yolov8.yaml) to verify that.
 
 . The main workflow includes:
 
@@ -159,4 +160,5 @@ python3 supervised_train.py
 ## Resources
 - [SimCLR Tutorial](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial17/SimCLR.html)
 - [Yolov8 Architecture](https://github.com/ultralytics/ultralytics/issues/189)
+- [Yolov8 Yaml file](https://github.com/ultralytics/ultralytics/blob/1d13575ba16623d711c682118ee118615383ba99/ultralytics/cfg/models/v8/yolov8.yaml)
 - [SimCLR information](https://research.google/blog/advancing-self-supervised-and-semi-supervised-learning-with-simclr)
