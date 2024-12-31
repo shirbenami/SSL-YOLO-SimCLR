@@ -79,7 +79,7 @@ def build_classifier(lr):
             )
     
         def forward(self, x):
-            features = self.backbone(x)  # Pass through backbone
+            features = self.backbone(x).flatten(start_dim=1)  # Pass through backbone
             projections = self.projection_head(features)  # Pass through SimCLR projection head
             return projections
     
