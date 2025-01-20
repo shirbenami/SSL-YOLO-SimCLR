@@ -53,7 +53,8 @@ For YOLOv8, the backbone is the first 10 layers. You can check the [yaml model d
 
 ### Step 1: Selecting the Dataset
 
-The first step in preparing the dataset for the project is to choose a suitable dataset. In this project, the **AITOD** dataset was selected.
+The first step in preparing the dataset for the project is to choose a suitable dataset. In this project, the **AITOD** dataset was selected. 
+It contain 1000 images.
 
 ### Step 2: Dataset Location
 
@@ -69,15 +70,15 @@ C:\Users\shir-\PycharmProjects\ssl_yolo\datasets\train
 ### Step 3: Splitting the Dataset
 
 After selecting the dataset, the next step is to split the data into two groups:
-- **80%** of the data will be used for SSL TRAIN.
+- **80%** of the data will be used for SSL TRAIN. 
 - **20%** of the data will be used for SUPERVISED.
 
 ### Step 4: Splitting the SUPERVISED Group
 
 Subsequently, the SUPERVISED group is split into three subgroups:
-- **70%** for TRAIN.
-- **15%** for VALIDATION (VAL).
-- **15%** for TEST.
+- **75%** for TRAIN. - 150 images with 2823 objects.
+- **15%** for VALIDATION (VAL). 30 images with 923 objects
+- **10%** for TEST. 20 images with 528 objects.
 
 ### Step 5: Processing the SSL DATASET
 
