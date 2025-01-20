@@ -113,8 +113,21 @@ This step merges vehicle and background crops into a single folder, allowing for
 ```python
 
 project_root/
-├── datasets/
-│   └── cropped/                # Contains labeled and unlabeled datasets.
+├── data/
+│   ├── count_labels/           # Tools for counting objects in datasets.
+│   │   ├── __pycache__/        # Compiled Python files for count_labels.
+│   │   └── count_objects_in_split.py # Counts objects in dataset splits.
+│   ├── crops/                  # Tools for creating and managing cropped datasets.
+│   │   ├── __pycache__/        # Compiled Python files for crops.
+│   │   ├── __init__.py         # Initialization for the crops module.
+│   │   ├── image_crop.py       # Functionality for cropping images.
+│   │   └── random_crops.py     # Generates random cropped images.
+│   └── split/                  # Tools for dataset splitting.
+│       ├── __pycache__/        # Compiled Python files for split.
+│       ├── __init__.py         # Initialization for the split module.
+│       ├── split_ssl_dataset.py # Splits datasets for SSL training.
+│       ├── split_supervised_dataset.py # Splits datasets for supervised training.
+│       └── split_to_ssl_and_supervised.py # Splits datasets into SSL and supervised subsets.
 │
 ├── loss_functions/
 │   └── info_nce.py             # Implementation of the InfoNCE loss function for SimCLR.
@@ -138,11 +151,13 @@ project_root/
 │   ├── fine_tuning/            # Stores logs, graphs, and models from fine-tuning.
 │   └── supervised_train/       # Stores logs, graphs, and models from supervised training.
 │
-├── simclr_train.py                # Main script for training YOLOv8 with SSL (SimCLR).
+├── simclr_train.py             # Main script for training YOLOv8 with SSL (SimCLR).
 ├── fine_tune.py                # Main script for fine-tuning using SSL-pretrained weights.
 ├── supervised_train.py         # Main script for supervised YOLOv8 training.
 ├── README.md                   # Project description, instructions, and results.
+├── main.py                     # prepare all the datasets.
 └── .gitignore                  # Specifies files and folders to exclude from version control.
+
 
 
 ```
