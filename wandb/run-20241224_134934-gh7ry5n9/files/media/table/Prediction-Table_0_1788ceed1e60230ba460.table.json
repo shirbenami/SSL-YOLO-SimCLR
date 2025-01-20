@@ -1,1 +1,0 @@
-{"columns": ["Model-Name", "Image", "Num-Objects", "Mean-Confidence", "Speed"], "data": [["yolov8n", "Image", 38, {"car": 0.41758957505226135}, {"preprocess": null, "inference": null, "postprocess": null}]]}
