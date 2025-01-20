@@ -49,7 +49,50 @@ For YOLOv8, the backbone is the first 10 layers. You can check the [yaml model d
 * Provides visualizations such as loss graphs, confusion matrices, and accuracy metrics.
 
 
-## Dataset - cars and backrounds
+## Dataset Preparation for Project
+
+### Step 1: Selecting the Dataset
+
+The first step in preparing the dataset for the project is to choose a suitable dataset. In this project, the **AITOD** dataset was selected.
+
+### Step 2: Dataset Location
+
+The dataset is divided into two main directories:
+- **IMAGES**: Contains the images.
+- **LABELS**: Contains the labels.
+
+The data is located in the following directory:
+```
+C:\Users\shir-\PycharmProjects\ssl_yolo\datasets\train
+```
+
+### Step 3: Splitting the Dataset
+
+After selecting the dataset, the next step is to split the data into two groups:
+- **80%** of the data will be used for SSL TRAIN.
+- **20%** of the data will be used for SUPERVISED.
+
+### Step 4: Splitting the SUPERVISED Group
+
+Subsequently, the SUPERVISED group is split into three subgroups:
+- **70%** for TRAIN.
+- **15%** for VALIDATION (VAL).
+- **15%** for TEST.
+
+### Step 5: Processing the SSL DATASET
+
+In this step, the SSL dataset is processed by cropping all objects in the image using the labels. This includes:
+- Identifying the objects in each image according to the labels (LABELS).
+- Cropping the objects from the images.
+- Creating **CROPS OBJECT** files for all vehicles in the images.
+
+### Step 6: Creating RANDOMCROP for Background
+
+In this step, random background crops are created from the images. This includes:
+- Selecting random areas in the image that do not include labeled objects.
+- Cropping the random areas.
+- Saving the **RANDOMCROP** files for background to balance the data.
+
 
 * The supervised dataset consists of labeled images of cars, each containing multiple annotated objects, split into three subsets:
   * **Train set**: 1,216 images with 22,806 labels
