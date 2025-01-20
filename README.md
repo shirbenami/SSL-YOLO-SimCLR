@@ -73,34 +73,39 @@ After selecting the dataset, the next step is to split the data into two groups:
 - **80%** of the data will be used for SSL TRAIN. 
 - **20%** of the data will be used for SUPERVISED.
 
-### Step 4: Splitting the SUPERVISED Group
+### Step 4: Splitting the SUPERVISED dataset
 
-Subsequently, the SUPERVISED group is split into three subgroups:
-- **75%** for TRAIN. - 150 images with 2823 objects.
+- **75%** for TRAIN. 150 images with 2823 objects.
 - **15%** for VALIDATION (VAL). 30 images with 923 objects
 - **10%** for TEST. 20 images with 528 objects.
 
-### Step 5: Processing the SSL DATASET
+### Step 5: Processing the SSL dataset
 
 In this step, the SSL dataset is processed by cropping all objects in the image using the labels. This includes:
 - Identifying the objects in each image according to the labels (LABELS).
 - Cropping the objects from the images.
-- Creating **CROPS OBJECT** files for all vehicles in the images.
+- Creating **crops objects** files for all vehicles in the images.
+- There are 16,000 crops images.
 
-### Step 6: Creating RANDOMCROP for Background
+### Step 6: Creating random crops of background 
 
 In this step, random background crops are created from the images. This includes:
 - Selecting random areas in the image that do not include labeled objects.
 - Cropping the random areas.
-- Saving the **RANDOMCROP** files for background to balance the data.
+- Saving the **random crops** files for background to balance the data.
+- There are 16,000 crops images.
 
 
-* The supervised dataset consists of labeled images of cars, each containing multiple annotated objects, split into three subsets:
-  * **Train set**: 1,216 images with 22,806 labels
-  * **Validation set**: 352 images with  6,796 labels
-  * **Test set**: 175 images with 3,208 labels 
-* The self-supervised learning stage uses a larger dataset containing **47,043** unlabeled images, consisting of a mix of cars and background objects. This dataset enables the model to learn generalizable features without relying on labels:
-  * **Dataset split**: 32930 train (70%), 7056 val(15%), 7057 test(15%) 
+### Step 7: Merge the crops of the vehicles and background to one mix folder:
+This step merges vehicle and background crops into a single folder, allowing for random sampling of mixed, unlabeled images during SSL training to ensure diverse and balanced batches.
+- There are **32,000** mix crops unlabeled images.
+
+
+### Step 8: Splitting the SSL dataset:
+- **75%** for TRAIN.  24,033 objects.
+- **15%** for VALIDATION (VAL). 4806 objects
+- **10%** for TEST.  3205 objects.
+
 
   
 ## Project Structure
