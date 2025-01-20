@@ -1,0 +1,367 @@
+_wandb:
+    value:
+        cli_version: 0.19.1
+        m: []
+        python_version: 3.12.6
+        t:
+            "1":
+                - 1
+                - 41
+                - 55
+            "2":
+                - 1
+                - 41
+                - 55
+            "3":
+                - 2
+                - 13
+                - 16
+                - 23
+                - 55
+                - 61
+            "4": 3.12.6
+            "5": 0.19.1
+            "8":
+                - 3
+                - 5
+            "12": 0.19.1
+            "13": windows-amd64
+        visualize:
+            curves/F1-Confidence(B):
+                panel_config:
+                    fieldSettings:
+                        class: class
+                        x: x
+                        "y": "y"
+                    panelDefId: wandb/area-under-curve/v0
+                    stringSettings:
+                        title: F1-Confidence(B)
+                        x-axis-title: Confidence
+                        y-axis-title: F1
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: curves/F1-Confidence(B)_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            curves/Precision-Confidence(B):
+                panel_config:
+                    fieldSettings:
+                        class: class
+                        x: x
+                        "y": "y"
+                    panelDefId: wandb/area-under-curve/v0
+                    stringSettings:
+                        title: Precision-Confidence(B)
+                        x-axis-title: Confidence
+                        y-axis-title: Precision
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: curves/Precision-Confidence(B)_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            curves/Precision-Recall(B):
+                panel_config:
+                    fieldSettings:
+                        class: class
+                        x: x
+                        "y": "y"
+                    panelDefId: wandb/area-under-curve/v0
+                    stringSettings:
+                        title: Precision-Recall(B)
+                        x-axis-title: Recall
+                        y-axis-title: Precision
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: curves/Precision-Recall(B)_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            curves/Recall-Confidence(B):
+                panel_config:
+                    fieldSettings:
+                        class: class
+                        x: x
+                        "y": "y"
+                    panelDefId: wandb/area-under-curve/v0
+                    stringSettings:
+                        title: Recall-Confidence(B)
+                        x-axis-title: Confidence
+                        y-axis-title: Recall
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: curves/Recall-Confidence(B)_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+agnostic_nms:
+    value: false
+amp:
+    value: true
+augment:
+    value: false
+auto_augment:
+    value: randaugment
+batch:
+    value: 8
+box:
+    value: 7.5
+cache:
+    value: false
+cfg:
+    value: null
+classes:
+    value: null
+close_mosaic:
+    value: 10
+cls:
+    value: 0.5
+conf:
+    value: null
+copy_paste:
+    value: 0
+cos_lr:
+    value: false
+crop_fraction:
+    value: 1
+data:
+    value: datasets/new_dataset/split/data.yaml
+degrees:
+    value: 0
+deterministic:
+    value: true
+device:
+    value: null
+dfl:
+    value: 1.5
+dnn:
+    value: false
+dropout:
+    value: 0
+dynamic:
+    value: false
+embed:
+    value: null
+epochs:
+    value: 15
+erasing:
+    value: 0.4
+exist_ok:
+    value: false
+fliplr:
+    value: 0.5
+flipud:
+    value: 0
+format:
+    value: torchscript
+fraction:
+    value: 1
+freeze:
+    value: null
+half:
+    value: false
+hsv_h:
+    value: 0.015
+hsv_s:
+    value: 0.7
+hsv_v:
+    value: 0.4
+imgsz:
+    value: 640
+int8:
+    value: false
+iou:
+    value: 0.7
+keras:
+    value: false
+kobj:
+    value: 1
+label_smoothing:
+    value: 0
+line_width:
+    value: null
+lr0:
+    value: 0.01
+lrf:
+    value: 0.01
+mask_ratio:
+    value: 4
+max_det:
+    value: 300
+mixup:
+    value: 0
+mode:
+    value: train
+model:
+    value: yolov8n.pt
+momentum:
+    value: 0.937
+mosaic:
+    value: 1
+multi_scale:
+    value: false
+name:
+    value: train15
+nbs:
+    value: 64
+nms:
+    value: false
+opset:
+    value: null
+optimize:
+    value: false
+optimizer:
+    value: auto
+overlap_mask:
+    value: true
+patience:
+    value: 50
+perspective:
+    value: 0
+plots:
+    value: true
+pose:
+    value: 12
+pretrained:
+    value: true
+profile:
+    value: false
+project:
+    value: null
+rect:
+    value: false
+resume:
+    value: false
+retina_masks:
+    value: false
+save:
+    value: true
+save_conf:
+    value: false
+save_crop:
+    value: false
+save_dir:
+    value: runs\detect\train15
+save_frames:
+    value: false
+save_hybrid:
+    value: false
+save_json:
+    value: false
+save_period:
+    value: -1
+save_txt:
+    value: false
+scale:
+    value: 0.5
+seed:
+    value: 0
+shear:
+    value: 0
+show:
+    value: false
+show_boxes:
+    value: true
+show_conf:
+    value: true
+show_labels:
+    value: true
+simplify:
+    value: false
+single_cls:
+    value: false
+source:
+    value: null
+split:
+    value: val
+stream_buffer:
+    value: false
+task:
+    value: detect
+time:
+    value: null
+tracker:
+    value: botsort.yaml
+translate:
+    value: 0.1
+val:
+    value: true
+verbose:
+    value: true
+vid_stride:
+    value: 1
+visualize:
+    value: false
+warmup_bias_lr:
+    value: 0.1
+warmup_epochs:
+    value: 3
+warmup_momentum:
+    value: 0.8
+weight_decay:
+    value: 0.0005
+workers:
+    value: 0
+workspace:
+    value: 4

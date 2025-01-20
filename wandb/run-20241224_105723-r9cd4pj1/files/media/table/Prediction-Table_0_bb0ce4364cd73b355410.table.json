@@ -1,0 +1,1 @@
+{"columns": ["Model-Name", "Image", "Num-Objects", "Mean-Confidence", "Speed"], "data": [["yolov8n", "Image", 26, {"car": 0.43395310640335083}, {"preprocess": 5.157947540283203, "inference": 67.07239151000977, "postprocess": 0.0}]]}
