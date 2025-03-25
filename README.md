@@ -1,4 +1,4 @@
-# Self-Supervised Learning and Fine-Tuning with YOLOv8
+# Self-Supervised Learning for Small Object Detection and Fine-Tuning with YOLOv8
 This repository contains a project focused on leveraging YOLOv8 for self-supervised learning (SSL) using SimCLR principles and fine-tuning it on a labeled dataset. The project includes SSL training, fine-tuning, supervised training, and detailed evaluation tools to compare the benefits of SSL-pretrained backbones.
 
 ## Project Overview
@@ -9,6 +9,61 @@ This project explores the integration of YOLOv8 with SimCLR for self-supervised 
 * The model structure:
 ![model structure](https://github.com/user-attachments/assets/1891baea-cb40-4ce9-a280-1951adb63d02)
 For YOLOv8, the backbone is the first 10 layers. You can check the [yaml model definition](https://github.com/ultralytics/ultralytics/blob/1d13575ba16623d711c682118ee118615383ba99/ultralytics/cfg/models/v8/yolov8.yaml) to verify that.
+
+## 🧭 Workflow Summary
+
+### 1. **Unlabeled Dataset of Aerial Images**
+- The project begins with a unlabeled dataset of **aerial images**, rich in small objects (vehicles), but **without annotations**.
+
+### 2. **Initial Object Detection using a Pretrained Model**
+- A **pretrained object detection model** (e.g., YOLOv8 with pretrained weights) was used to perform **weak supervision**:
+  - Run predictions on the aerial images.
+  - Extract bounding boxes for detected vehicles.
+  - Treat the detected objects as **pseudo-labeled vehicles**.
+
+### 3. **Cropping Detected Vehicles**
+- From each bounding box, a square crop was extracted around the vehicle.
+- These cropped patches represent the **"vehicle" class**.
+- Saved as `cars_*.jpg` files.
+
+### 4. **Generating Background Crops**
+- To balance the dataset and provide negative examples:
+  - An equal number of **random background crops** (with no vehicles) were taken from the same aerial images.
+  - These represent the **"background" class**.
+  - Saved as `background_*.jpg` files.
+
+### 5. **Constructing the SSL Dataset**
+- The final dataset contains:
+  - Cropped vehicles → `car_001.jpg`, `car_002.jpg`, ...
+  - Cropped backgrounds → `background_001.jpg`, `background__002.jpg`, ...
+- This allows for constructing contrastive batches with clear **semantic meaning** between classes.
+
+
+## 🔁 Contrastive Learning Strategies
+
+Using the constructed dataset, **3 SSL strategies** were implemented:
+
+### 1. **Unsupervised Contrastive Learning (SimCLR-style)**
+- Each batch contains random images from the dataset.
+- Every image is augmented twice → forming positive pairs.
+- All other images act as negatives (even if there is image from the same class)
+- No class labels are used.
+
+### 2. **Supervised Contrastive Learning – Without Augmentation**
+- Images are grouped by class (vehicle or background).
+- Positive pairs are two different images from the same class.
+- No augmentations applied.
+
+### 3. **Supervised Contrastive Learning – With Augmentation** ✅
+- The most effective method for this dataset:
+  - **Anchor**: cropped vehicle image(1 image)
+  - **Positive**: an augmented version of the same image (1 image)
+  - **Negatives**: randomly sampled background crops (batch size - 2 images)
+- Combines **label supervision** and **augmentation diversity**.
+
+## 🎯 Goal
+
+To train a robust feature extractor that distinguishes between small objects (vehicles) and background in aerial imagery.
 
 . The main workflow includes:
 
